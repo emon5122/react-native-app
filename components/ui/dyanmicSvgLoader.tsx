@@ -29,7 +29,7 @@ const DynamicSvgLoader = ({ link }: { link: string }) => {
     return (
         <>
             {svgContent ? (
-                <SvgXml xml={svgContent} style={{ flex: 1, display: "flex" }} />
+                <SvgXml xml={svgContent} />
             ) : (
                 <Text>Failed to load SVG</Text>
             )}

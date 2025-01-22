@@ -8,9 +8,7 @@ const RankScreen = () => {
             style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
             <Text>Not implemented yet!</Text>
-            <View style={{ width: 20, height: 20 }}>
-                <DynamicSvgLoader link={flag("Brazil")?.flag!} />
-            </View>
+            <DynamicSvgLoader link={flag("Argentina")?.flag!} />
         </View>
     );
 };
