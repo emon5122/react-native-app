@@ -1,4 +1,4 @@
-import NewsCard from "@/components/ui/news/card";
+import NewsCard from "@/components/news/card";
 import { newsMockData } from "@/constants/data/news";
 import { ScrollView, View } from "react-native";
 

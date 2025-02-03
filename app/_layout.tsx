@@ -1,3 +1,5 @@
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { Poppins_400Regular } from "@expo-google-fonts/poppins";
 import { Rubik_400Regular, Rubik_700Bold } from "@expo-google-fonts/rubik";
 import { useFonts } from "expo-font";
@@ -28,10 +30,14 @@ export default function RootLayout() {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
+            <Header />
             <Stack>
-                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                <Stack.Screen name="index" options={{ headerShown: false }} />
+                <Stack.Screen name="news" options={{ headerShown: false }} />
+                <Stack.Screen name="chat" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
             </Stack>
+            <Footer />
         </SafeAreaView>
     );
 }

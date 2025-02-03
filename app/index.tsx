@@ -1,11 +1,11 @@
-import GradientBackground from "@/components/ui/chatButton";
+import { Link } from "expo-router";
 import { Text, View } from "react-native";
 
 const HomeScreen = () => {
     return (
         <View>
             <Text>Home Screen</Text>
-            <GradientBackground />
+            <Link href="/chat">Chat</Link>
         </View>
     );
 };
