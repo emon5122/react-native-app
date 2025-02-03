@@ -1,10 +1,9 @@
 import { LinearGradient } from "expo-linear-gradient";
-import React from "react";
-import { Dimensions, StyleSheet, Text, View } from "react-native";
-
-const { height } = Dimensions.get("window");
+import { StyleSheet, Text, useWindowDimensions, View } from "react-native";
 
 const SelfChat = () => {
+    const { height } = useWindowDimensions();
+
     return (
         <View style={styles.selfChatContainer}>
             <LinearGradient
@@ -19,7 +18,16 @@ const SelfChat = () => {
                     ex, sed debitis quos, unde animi. Et eligendi quas magnam
                     cum eveniet? Praesentium!
                 </Text>
-                <View style={styles.triangle} />
+                <View
+                    style={[
+                        styles.triangle,
+                        {
+                            borderLeftWidth: height * 0.005,
+                            borderRightWidth: height * 0.005,
+                            borderTopWidth: height * 0.035,
+                        },
+                    ]}
+                />
             </LinearGradient>
         </View>
     );
@@ -51,9 +59,6 @@ const styles = StyleSheet.create({
     triangle: {
         width: 0,
         height: 0,
-        borderLeftWidth: height * 0.005,
-        borderRightWidth: height * 0.005,
-        borderTopWidth: height * 0.035,
         borderLeftColor: "transparent",
         borderRightColor: "transparent",
         borderTopColor: "#3498DB",
