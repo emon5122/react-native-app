@@ -2,8 +2,9 @@ on:
     push:
         branches:
             - main
+
 jobs:
-    update:
+    build-apk:
         runs-on: ubuntu-latest
         steps:
             - name: 🏗 Setup repo
@@ -11,6 +12,12 @@ jobs:
 
             - name: 🏗 Setup Node
               uses: actions/setup-node@v3
+
+            - name: 🏗 Install pnpm
+              run: npm install -g pnpm
+
+            - name: 🏗 Install dependencies using pnpm
+              run: pnpm install
 
             - name: 🏗 Setup EAS
               uses: expo/expo-github-action@v8
