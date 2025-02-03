@@ -19,4 +19,4 @@ jobs:
                   token: ${{ secrets.EXPO_TOKEN }}
 
             - name: 🚀 Create APK
-              run: eas build -p android --profile preview
+              run: eas build -p android --profile preview --non-interactive
