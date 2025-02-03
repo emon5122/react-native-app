@@ -4,6 +4,7 @@
     "slug": "react-native-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "owner": "emon5122",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
