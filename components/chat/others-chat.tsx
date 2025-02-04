@@ -1,17 +1,11 @@
-import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, useWindowDimensions, View } from "react-native";
 
-const SelfChat = () => {
+const OthersChat = () => {
     const { height } = useWindowDimensions();
 
     return (
-        <View style={styles.selfChatContainer}>
-            <LinearGradient
-                colors={["#34506D", "#3498DB"]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 0 }}
-                style={styles.gradientContainer}
-            >
+        <View style={styles.othersChatContainer}>
+            <View style={styles.ChatContainer}>
                 <Text style={styles.text}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Minus, labore neque perferendis id dolor minima ad aliquam
@@ -21,6 +15,7 @@ const SelfChat = () => {
                 <View
                     style={[
                         styles.triangle,
+                        styles.triangleBorder,
                         {
                             borderLeftWidth: height * 0.005,
                             borderRightWidth: height * 0.005,
@@ -28,43 +23,68 @@ const SelfChat = () => {
                         },
                     ]}
                 />
-            </LinearGradient>
+                <View
+                    style={[
+                        styles.triangle,
+                        styles.triangleFill,
+                        {
+                            borderLeftWidth: height * 0.004,
+                            borderRightWidth: height * 0.004,
+                            borderTopWidth: height * 0.033,
+                        },
+                    ]}
+                />
+            </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    selfChatContainer: {
+    othersChatContainer: {
         flexDirection: "row",
-        justifyContent: "flex-end",
-        alignItems: "flex-end",
-        paddingRight: 20,
-        marginBottom: 10,
+        marginVertical: 10,
+        marginHorizontal: 15,
     },
-    gradientContainer: {
+    ChatContainer: {
         maxWidth: "75%",
-        padding: 10,
+        backgroundColor: "#FFFFFF",
         borderWidth: 1,
         borderColor: "#EEEEEE",
         borderRadius: 10,
+        padding: 12,
         position: "relative",
     },
     text: {
-        color: "#fff",
+        color: "black",
         fontSize: 16,
         fontFamily: "Rubik_400Regular",
+        lineHeight: 20,
     },
     triangle: {
         width: 0,
         height: 0,
         borderLeftColor: "transparent",
         borderRightColor: "transparent",
-        borderTopColor: "#3498DB",
+        borderStyle: "solid",
         position: "absolute",
-        top: "95%",
-        right: "-5%",
-        transform: [{ rotate: "-58deg" }],
+        left: -12,
+        bottom: 8,
+        transform: [{ rotate: "45deg" }],
+    },
+    triangleBorder: {
+        borderTopColor: "#CFD8DC",
+        borderLeftWidth: 8,
+        borderRightWidth: 8,
+        borderTopWidth: 8,
+    },
+    triangleFill: {
+        borderTopColor: "#FFFFFF",
+        borderLeftWidth: 7,
+        borderRightWidth: 7,
+        borderTopWidth: 7,
+        left: -11,
+        bottom: 9,
     },
 });
 
-export default SelfChat;
+export default OthersChat;
