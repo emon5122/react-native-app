@@ -1,14 +1,8 @@
 import { loggedInUserData } from "@/constants/data/user";
-import { usePathname } from "expo-router";
 import { Image, Text, View } from "react-native";
 
-export const Header = () => {
-    const path = usePathname();
-
-    if (path === "/chat") {
-        return null;
-    }
-
+export const Header = ({ path }: { path: string }) => {
+    if (path === "/chat") return null;
     return (
         <View className="w-full h-[10%] bg-[#1F1B1B] p-4">
             <View className="flex flex-row items-center mt-2.5">

@@ -3,7 +3,7 @@ import { Header } from "@/components/header";
 import { Poppins_400Regular } from "@expo-google-fonts/poppins";
 import { Rubik_400Regular, Rubik_700Bold } from "@expo-google-fonts/rubik";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Stack, usePathname } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { SafeAreaView } from "react-native";
@@ -13,6 +13,8 @@ import "../global.css";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+    const path = usePathname();
+
     const [loaded] = useFonts({
         Rubik_400Regular,
         Rubik_700Bold,
@@ -31,14 +33,14 @@ export default function RootLayout() {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Header />
+            <Header path={path} />
             <Stack>
                 <Stack.Screen name="index" options={{ headerShown: false }} />
                 <Stack.Screen name="news" options={{ headerShown: false }} />
                 <Stack.Screen name="chat" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
             </Stack>
-            <Footer />
+            <Footer path={path} />
         </SafeAreaView>
     );
 }

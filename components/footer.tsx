@@ -1,4 +1,4 @@
-import { Link, usePathname } from "expo-router";
+import { Link } from "expo-router";
 import { Text, View } from "react-native";
 import GameBoardIcon from "./icons/gameBoard";
 import NewsIcon from "./icons/news";
@@ -29,11 +29,8 @@ const TABS: TabType[] = [
     { icon: NewsIcon, label: "News", href: "/news" },
 ];
 
-export const Footer = () => {
-    const path = usePathname();
-
+export const Footer = ({ path }: { path: string }) => {
     if (path === "/chat") return null;
-
     const TabItem = ({
         icon: Icon,
         label,
