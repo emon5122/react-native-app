@@ -1,7 +1,6 @@
-import { Styles } from "@/constants/Colors";
 import { loggedInUserData } from "@/constants/data/user";
 import { usePathname } from "expo-router";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 
 export const Header = () => {
     const path = usePathname();
@@ -9,24 +8,25 @@ export const Header = () => {
     if (path === "/chat") {
         return null;
     }
+
     return (
-        <View style={styles.header}>
-            <View style={styles.InsideHeader}>
-                <View style={styles.imageWrapper}>
-                    <View style={styles.innerCircle} />
+        <View className="w-full h-[10%] bg-[#1F1B1B] p-4">
+            <View className="flex flex-row items-center mt-2.5">
+                <View className="w-[60px] h-[60px] rounded-full bg-[#4774AD] justify-center items-center mr-2.5 overflow-hidden">
+                    <View className="w-[55px] h-[55px] rounded-full bg-[#1F1B1B]" />
                     <Image
-                        resizeMode={"contain"}
-                        style={styles.headerImage}
+                        resizeMode="contain"
+                        className="w-[50px] h-[50px] rounded-full absolute"
                         source={{
                             uri: loggedInUserData.image,
                         }}
                     />
                 </View>
-                <View style={styles.textContainer}>
-                    <Text style={styles.headerText}>
+                <View className="justify-center">
+                    <Text className="text-white text-base font-bold">
                         {loggedInUserData.name}
                     </Text>
-                    <Text style={styles.headerSubText}>
+                    <Text className="text-gray-400 text-sm font-bold">
                         {loggedInUserData.title}
                     </Text>
                 </View>
@@ -34,53 +34,3 @@ export const Header = () => {
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    header: {
-        width: "100%",
-        height: "10%",
-        backgroundColor: Styles.colour.backgroundColour,
-        padding: 15,
-    },
-    InsideHeader: {
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        marginTop: 10,
-    },
-    headerText: {
-        color: Styles.colour.fontColourInverted,
-        fontSize: Styles.font.size.medium,
-        fontWeight: "bold",
-    },
-    headerSubText: {
-        color: Styles.colour.subFontColourInverted,
-        fontSize: Styles.font.size.small,
-        fontWeight: "bold",
-    },
-    imageWrapper: {
-        width: 60,
-        height: 60,
-        borderRadius: 100,
-        backgroundColor: "#4774AD",
-        justifyContent: "center",
-        alignItems: "center",
-        marginRight: 10,
-        overflow: "hidden",
-    },
-    headerImage: {
-        width: 50,
-        height: 50,
-        borderRadius: 100,
-        position: "absolute",
-    },
-    textContainer: {
-        justifyContent: "center",
-    },
-    innerCircle: {
-        width: 55,
-        height: 55,
-        borderRadius: 100,
-        backgroundColor: Styles.colour.backgroundColour,
-    },
-});

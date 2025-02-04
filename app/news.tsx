@@ -4,26 +4,16 @@ import { ScrollView, View } from "react-native";
 
 const NewsScreen = () => {
     const data = newsMockData;
+
     return (
-        <View
-            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-            <ScrollView>
-                {data.map((item, index) => {
-                    return (
-                        <View key={index}>
-                            <NewsCard {...item} />
-                            <View
-                                style={{
-                                    height: 1.5,
-                                    width: "80%",
-                                    backgroundColor: "#EEEEEE",
-                                    marginVertical: 10,
-                                }}
-                            />
-                        </View>
-                    );
-                })}
+        <View className="flex-1 justify-center items-center">
+            <ScrollView className="w-full px-4">
+                {data.map((item, index) => (
+                    <View key={index}>
+                        <NewsCard {...item} />
+                        <View className="h-[1.5px] w-4/5 bg-[#EEEEEE] mx-auto my-2.5" />
+                    </View>
+                ))}
             </ScrollView>
         </View>
     );

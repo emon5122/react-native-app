@@ -4,9 +4,9 @@ const OthersChat = () => {
     const { height } = useWindowDimensions();
 
     return (
-        <View style={styles.othersChatContainer}>
-            <View style={styles.ChatContainer}>
-                <Text style={styles.text}>
+        <View className="flex-row mx-4 my-2.5">
+            <View className="relative max-w-[75%] bg-white border border-[#EEEEEE] rounded-xl p-3">
+                <Text className="text-black text-base font-[Rubik_400Regular] leading-5">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Minus, labore neque perferendis id dolor minima ad aliquam
                     ex, sed debitis quos, unde animi. Et eligendi quas magnam
@@ -40,26 +40,6 @@ const OthersChat = () => {
 };
 
 const styles = StyleSheet.create({
-    othersChatContainer: {
-        flexDirection: "row",
-        marginVertical: 10,
-        marginHorizontal: 15,
-    },
-    ChatContainer: {
-        maxWidth: "75%",
-        backgroundColor: "#FFFFFF",
-        borderWidth: 1,
-        borderColor: "#EEEEEE",
-        borderRadius: 10,
-        padding: 12,
-        position: "relative",
-    },
-    text: {
-        color: "black",
-        fontSize: 16,
-        fontFamily: "Rubik_400Regular",
-        lineHeight: 20,
-    },
     triangle: {
         width: 0,
         height: 0,
@@ -73,15 +53,9 @@ const styles = StyleSheet.create({
     },
     triangleBorder: {
         borderTopColor: "#CFD8DC",
-        borderLeftWidth: 8,
-        borderRightWidth: 8,
-        borderTopWidth: 8,
     },
     triangleFill: {
         borderTopColor: "#FFFFFF",
-        borderLeftWidth: 7,
-        borderRightWidth: 7,
-        borderTopWidth: 7,
         left: -11,
         bottom: 9,
     },

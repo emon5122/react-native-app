@@ -5,14 +5,14 @@ const SelfChat = () => {
     const { height } = useWindowDimensions();
 
     return (
-        <View style={styles.selfChatContainer}>
+        <View className="flex-row justify-end items-end pr-5 mb-2.5">
             <LinearGradient
                 colors={["#34506D", "#3498DB"]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 0 }}
-                style={styles.gradientContainer}
+                className="relative max-w-[75%] p-2.5 border border-[#EEEEEE] rounded-xl"
             >
-                <Text style={styles.text}>
+                <Text className="text-white text-base font-[Rubik_400Regular]">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Minus, labore neque perferendis id dolor minima ad aliquam
                     ex, sed debitis quos, unde animi. Et eligendi quas magnam
@@ -34,26 +34,6 @@ const SelfChat = () => {
 };
 
 const styles = StyleSheet.create({
-    selfChatContainer: {
-        flexDirection: "row",
-        justifyContent: "flex-end",
-        alignItems: "flex-end",
-        paddingRight: 20,
-        marginBottom: 10,
-    },
-    gradientContainer: {
-        maxWidth: "75%",
-        padding: 10,
-        borderWidth: 1,
-        borderColor: "#EEEEEE",
-        borderRadius: 10,
-        position: "relative",
-    },
-    text: {
-        color: "#fff",
-        fontSize: 16,
-        fontFamily: "Rubik_400Regular",
-    },
     triangle: {
         width: 0,
         height: 0,

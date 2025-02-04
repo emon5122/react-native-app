@@ -8,6 +8,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { SafeAreaView } from "react-native";
 import "react-native-reanimated";
+import "../global.css";
 
 SplashScreen.preventAutoHideAsync();
 
