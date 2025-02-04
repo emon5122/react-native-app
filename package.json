@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "ts": "tsc --noEmit",
+    "tsc": "tsc --noEmit",
     "prepare": "husky"
   },
   "jest": {
